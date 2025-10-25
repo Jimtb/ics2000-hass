@@ -23,8 +23,8 @@ from homeassistant.core import HomeAssistant
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from ics2000.Core import Hub
-from ics2000.Devices import Device, Dimmer
+from ics2000_python.Core import Hub
+from ics2000_python.Devices import Device, Dimmer
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -157,7 +157,10 @@ class KlikAanKlikUitDevice(LightEntity):
 
     @property
     def is_on(self) -> bool | None:
+        """Return true if light is on."""
+
         return
+        "self._state"
 
     @property
     def supported_color_modes(self) -> ColorMode:
